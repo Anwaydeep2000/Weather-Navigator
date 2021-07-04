@@ -7,6 +7,9 @@ body{
     font-size: 120%;
     font-family: 'Open Sans', sans-serif;
     background-image: url('https://source.unsplash.com/user/erondu/1600x900/?landscape');
+    background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 
 }
 .container{
