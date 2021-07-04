@@ -4,8 +4,14 @@ let weather = {
         fetch("https://api.openweathermap.org/data/2.5/weather?q="
             + city + "&units=metric&appid="
             + this.apikey)
-            .then((Response) => Response.json())
-            .then((data) => this.showweather(data));
+            .then((response) => {
+                if (!response.ok) {
+                  alert("Weather not found!");
+                  throw new Error("Weather not found!");
+                }
+                return response.json();
+              })
+              .then((data) => this.showweather(data));
     },
     showweather: function (data) {
         const { name } = data;
